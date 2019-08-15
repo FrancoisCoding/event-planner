@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Form, Button, Segment } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { createEvent, updateEvent } from "../eventActions";
-
+import cuid from "cuid";
 class EventForm extends Component {
   state = { ...this.props.event };
 
@@ -19,8 +19,15 @@ class EventForm extends Component {
     this.props.createEvent(this.state);
     if (this.state.id) {
       this.props.updateEvent(this.state);
+      this.props.history.push(`/events/${this.state.id}`);
     } else {
-      this.props.createEvent(this.state);
+      const newEvent = {
+        ...this.state,
+        id: cuid(),
+        hostPhotoURL: "/assets/user.png"
+      };
+      this.props.createEvent(newEvent);
+      this.props.history.push(`/events`);
     }
   };
 
