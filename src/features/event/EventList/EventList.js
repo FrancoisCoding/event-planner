@@ -1,11 +1,14 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
+import EventListItem from "./EventListItem";
 
-export default class EventList extends Component {
+class EventList extends Component {
   render() {
     return (
-      <div>
-        <h1>EventList</h1>
-      </div>
+      <Fragment>
+        <EventListItem />
+      </Fragment>
     );
   }
 }
+
+export default EventList;
