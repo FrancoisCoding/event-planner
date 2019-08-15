@@ -30,10 +30,11 @@ class EventDashboard extends Component {
   };
 
   handleCreateEvent = newEvent => {
+    const { createEvent } = this.props;
     newEvent.id = cuid();
     newEvent.hostPhotoURL = "/assets/user.png";
+    createEvent(newEvent);
     this.setState(({ events }) => ({
-      events: [...events, newEvent],
       isOpen: false
     }));
   };
