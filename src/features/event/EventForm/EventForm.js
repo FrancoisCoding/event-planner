@@ -14,6 +14,7 @@ import TextInput from "../../../app/common/form/TextInput";
 import TextArea from "../../../app/common/form/TextArea";
 import SelectInput from "../../../app/common/form/SelectInput";
 import DateInput from "../../../app/common/form/DateInput";
+import PlaceInput from "../../../app/common/form/PlaceInput";
 class EventForm extends Component {
   onFormSubmit = values => {
     if (this.props.initialValues.id) {
@@ -71,13 +72,13 @@ class EventForm extends Component {
               <Field
                 name="city"
                 type="text"
-                component={TextInput}
+                component={PlaceInput}
                 placeholder="Event City"
               />
               <Field
                 name="venue"
                 type="text"
-                component={TextInput}
+                component={PlaceInput}
                 placeholder="Event Venue"
               />
               <Field
