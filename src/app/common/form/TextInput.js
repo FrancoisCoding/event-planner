@@ -8,8 +8,6 @@ const TextInput = ({
   placeholder,
   meta: { touched, error }
 }) => {
-  console.log("error object", error);
-
   return (
     <Form.Field error={touched && !!error}>
       <input {...input} placeholder={placeholder} type={type} />
