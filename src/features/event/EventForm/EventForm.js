@@ -19,12 +19,12 @@ import DateInput from "../../../app/common/form/DateInput";
 import PlaceInput from "../../../app/common/form/PlaceInput";
 class EventForm extends Component {
   state = {
-    cityLatLing: {},
-    venueLatLing: {}
+    cityLatLng: {},
+    venueLatLng: {}
   };
 
   onFormSubmit = values => {
-    values.venueLatLing = this.state.venueLatLing;
+    values.venueLatLng = this.state.venueLatLng;
     if (this.props.initialValues.id) {
       this.props.updateEvent(values);
       this.props.history.push(`/events/${this.props.initialValues.id}`);
@@ -58,7 +58,7 @@ class EventForm extends Component {
       .then(results => getLatLng(results[0]))
       .then(latlng => {
         this.setState({
-          venueLatLing: latlng
+          venueLatLng: latlng
         });
       })
       .then(() => {
