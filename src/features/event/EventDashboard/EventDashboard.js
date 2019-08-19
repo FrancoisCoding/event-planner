@@ -34,8 +34,7 @@ const actions = {
 };
 
 const mapState = state => ({
-  events: state.events
-  // events: state.firestore.ordered.events
+  events: state.firestore.ordered.events
 });
 
 export default connect(

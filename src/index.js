@@ -24,7 +24,7 @@ let render = () => {
             position="bottom-right"
             transitionIn="fadeIn"
             transitionOut="fadeOut"
-            closeOnToastrClick="true"
+            closeOnToastrClick={true}
           />
           <App />
         </ScrollToTop>
