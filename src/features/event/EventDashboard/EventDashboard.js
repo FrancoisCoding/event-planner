@@ -4,6 +4,7 @@ import EventList from "../EventList/EventList";
 import { connect } from "react-redux";
 import { createEvent, deleteEvent, updateEvent } from "../eventActions";
 import { firestoreConnect } from "react-redux-firebase";
+import EventActivity from "../EventActivity/EventActivity";
 
 class EventDashboard extends Component {
   handleDeleteEvent = id => {
@@ -19,7 +20,7 @@ class EventDashboard extends Component {
           <EventList events={events} deleteEvent={this.handleDeleteEvent} />
         </Grid.Column>
         <Grid.Column width={6}>
-          <h2>Activity Feed</h2>
+          <EventActivity />
         </Grid.Column>
       </Grid>
     );
