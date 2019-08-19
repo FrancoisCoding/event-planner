@@ -3,6 +3,7 @@ import { Grid } from "semantic-ui-react";
 import EventList from "../EventList/EventList";
 import { connect } from "react-redux";
 import { createEvent, deleteEvent, updateEvent } from "../eventActions";
+import { firestoreConnect } from "react-redux-firebase";
 
 class EventDashboard extends Component {
   handleDeleteEvent = id => {
@@ -32,10 +33,10 @@ const actions = {
 };
 
 const mapState = state => ({
-  events: state.events
+  events: state.firestore.ordered.events
 });
 
 export default connect(
   mapState,
   actions
-)(EventDashboard);
+)(firestoreConnect([{ collection: "events" }])(EventDashboard));
